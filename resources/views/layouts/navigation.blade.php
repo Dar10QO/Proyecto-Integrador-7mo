@@ -37,6 +37,10 @@
                         {{ __('Dieta') }}
                     </x-nav-link>
 
+                    <x-nav-link :href="route('membresias.index')" :active="request()->routeIs('dashboard')">
+                        {{ __('Membresias') }}
+                    </x-nav-link>
+
                 </div>
             </div>
 

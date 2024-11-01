@@ -5,6 +5,12 @@
         </h2>
     </x-slot>
 
+    @if(session('exito'))
+    <script>
+        alertify.success("{{ session('exito') }}");
+    </script>
+    @endif
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -128,9 +134,169 @@
                 </div></div>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto ">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="max mx-auto ">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg w-full">
+                <div class="px-6 py-4">
+                    <p class="text-3xl font-semibold">Testimonios</p>
+                </div>
                 <div class="p-6 text-gray-900">
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+                    <div class="w-full flex-wrap h- flex items-center justify-around ">
+                        <div class="rate mb-2 w-96 h-72 bg-white py-6 px-6 border rounded-md flex flex-col justify-between">
+
+                                        <div class="stars flex gap-2">
+                                            <i class="bi bi-star text-2xl text-slate-800"></i>
+                                            <i class="bi bi-star text-2xl text-slate-800"></i>
+                                            <i class="bi bi-star text-2xl text-slate-800"></i>
+                                            <i class="bi bi-star text-2xl text-slate-800"></i>
+                                            <i class="bi bi-star text-2xl text-slate-800"></i>
+                                        </div>
+
+
+                                        <div class="rate-content flex gap-2  flex-col justify-center items-start">
+
+                                            <h1 class="text-2xl font-bold tracking-wider capitalize">
+                                                "Enfoque Personalizado"
+                                            </h1>
+
+                                            <p class="font-light tracking-widest">
+                                                "El nutriologo personaliza su enfoque, lo que me ayudó a adoptar hábitos saludables sin dificultad. Su apoyo y recomendaciones han hecho una gran diferencia en mi vida. ¡Recomendado!"                                            </p>
+
+                                        </div>
+
+                                        <div class="rater-info mb-2 flex gap-2 items-center">
+
+                                            <div class="avatar w-12 h-12 shadow rounded-full overflow-hidden">
+                                                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSSugC5bvVZjZwI4zQTUk9KRJF8Pfw4ePLXQ1uKhX0QaeptdJg5RwIct3JvOnOajfiH4nKGPZx5LzIyLUjzmmRZB4Nm2RHWE2o51VHLEg" class="object-cover w-full h-full" alt="">
+                                            </div>
+
+                                            <div class="flex-1 flex justify-around flex-col">
+                                                <h1 class="font-bold text-lg tracking-wide">
+                                                    David J Malan
+                                                </h1>
+                                                <span class="font-light text-sm text-slate-500">
+                                                    Maestro de Universidad
+                                                </span>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="rate mb-2 w-96 h-72 bg-white py-6 px-6 rounded-md flex border flex-col justify-between">
+
+                                        <div class="stars flex gap-2">
+                                            <i class="bi bi-star text-2xl text-slate-800"></i>
+                                            <i class="bi bi-star text-2xl text-slate-800"></i>
+                                            <i class="bi bi-star text-2xl text-slate-800"></i>
+                                            <i class="bi bi-star text-2xl text-slate-800"></i>
+                                            <i class="bi bi-star text-2xl text-slate-800"></i>
+                                        </div>
+
+
+                                        <div class="rate-content flex gap-2 flex-col justify-center items-start">
+
+                                            <h1 class="text-2xl font-bold tracking-wider capitalize">
+                                                "Conocimiento y Apoyo"
+                                            </h1>
+
+                                            <p class="font-light tracking-widest">
+                                                "Demuestra un gran conocimiento sobre nutrición y siempre está actualizado. Su apoyo constante me motiva a seguir mis objetivos. Estoy muy satisfecha con los resultados."                                            </p>
+
+                                        </div>
+
+                                        <div class="rater-info mb-2 flex gap-2 items-center">
+
+                                            <div class="avatar w-12 h-12 shadow rounded-full overflow-hidden">
+                                                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSSugC5bvVZjZwI4zQTUk9KRJF8Pfw4ePLXQ1uKhX0QaeptdJg5RwIct3JvOnOajfiH4nKGPZx5LzIyLUjzmmRZB4Nm2RHWE2o51VHLEg" class="object-cover w-full h-full" alt="">
+                                            </div>
+
+                                            <div class="flex-1 flex justify-around flex-col">
+                                                <h1 class="font-bold text-lg tracking-wide">
+                                                    David J Malan
+                                                </h1>
+                                                <span class="font-light text-sm text-slate-500">
+                                                    Maestra de Universidad
+                                                </span>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="rate mb-2 w-96 h-72 bg-white py-6 px-6 rounded-md flex border flex-col justify-between">
+
+                                        <div class="stars flex gap-2">
+                                            <i class="bi bi-star text-2xl text-slate-800"></i>
+                                            <i class="bi bi-star text-2xl text-slate-800"></i>
+                                            <i class="bi bi-star text-2xl text-slate-800"></i>
+                                            <i class="bi bi-star text-2xl text-slate-800"></i>
+                                            <i class="bi bi-star text-2xl text-slate-800"></i>
+                                        </div>
+
+
+                                        <div class="rate-content flex gap-2 flex-col justify-center items-start">
+
+                                            <h1 class="text-2xl font-bold tracking-wider capitalize">
+                                                Resultados Visibles
+                                            </h1>
+
+                                            <p class="font-light tracking-widest">
+                                                "Mi experiencia ha sido transformadora. He perdido peso y tengo más energía. ¡Sin duda continuaré con él!"                                            </p>
+
+                                        </div>
+
+                                        <div class="rater-info mb-2 flex gap-2 items-center">
+
+                                            <div class="avatar w-12 h-12 shadow rounded-full overflow-hidden">
+                                                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSSugC5bvVZjZwI4zQTUk9KRJF8Pfw4ePLXQ1uKhX0QaeptdJg5RwIct3JvOnOajfiH4nKGPZx5LzIyLUjzmmRZB4Nm2RHWE2o51VHLEg" class="object-cover w-full h-full" alt="">
+                                            </div>
+
+                                            <div class="flex-1 flex justify-around flex-col">
+                                                <h1 class="font-bold text-lg tracking-wide">
+                                                    David J Malan
+                                                </h1>
+                                                <span class="font-light text-sm text-slate-500">
+                                                    Maestro de Universidad
+                                                </span>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="">
+        <div class="max mx-auto ">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg w-full">
+                <div class="px-6 py-4">
+                    <p class="text-3xl font-semibold">Contacto</p>
+                </div>
+                <div class="p-6">
+                    <form class="w-full mx-auto" action="{{route('perfil.contact')}}" method="POST">
+                        @csrf
+                        <div class="mb-5">
+                            <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 -white">Nombre Completo</label>
+                            <input type="" id="nombre" name="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 -700 dark:border-gray-600 dark:placeholder-gray-400 -white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                        </div>
+                        <div class="mb-5">
+                                <label for="telefono" class="block mb-2 text-sm font-medium text-gray-900 -white">Telefono</label>
+                                <input type="" id="telefono" name="telefono" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 -700 dark:border-gray-600 dark:placeholder-gray-400 -white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                        </div>
+                        <div class="mb-5">
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 -white">Email</label>
+                            <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 -700 dark:border-gray-600 dark:placeholder-gray-400 -white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                        </div>
+                        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Contactar</button>
+                    </form>
 
                 </div>
             </div>
