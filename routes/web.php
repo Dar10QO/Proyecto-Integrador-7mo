@@ -23,4 +23,4 @@ require __DIR__.'/rutasJosue.php';
 require __DIR__.'/rutasChris.php';
 require __DIR__.'/rutasGera.php';
 require __DIR__.'/rutasLuis.php';
-require __DIR__.'/rutasDaniel.php';
+require __DIR__.'/rutasDani.php';
