@@ -10,5 +10,4 @@ class PerfilController extends Controller
     {
         return view('perfil.index');
     }
-
 }
