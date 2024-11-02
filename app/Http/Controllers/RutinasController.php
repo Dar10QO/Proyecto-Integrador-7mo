@@ -8,6 +8,11 @@ class RutinasController extends Controller
 {
     public function rutinasgratis()
     {
-        return view('rutinasgratis');
+        return view('vistasjosu.rutinasgratis');
+    }
+
+    public function ejerciciosp(){
+
+        return view('ejerciciospremium');
     }
 }
