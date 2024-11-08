@@ -7,6 +7,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Añadí esta ruta para que se pueda acceder a la vista de login
+Route::get('/sesion', function () {// No la nombre login porque me da error
+    return view('login');
+});
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

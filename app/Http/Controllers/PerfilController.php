@@ -10,7 +10,6 @@ class PerfilController extends Controller
     {
         return view('perfil.index');
     }
-
     public function contact(Request $request)
     {
         $request->validate([
