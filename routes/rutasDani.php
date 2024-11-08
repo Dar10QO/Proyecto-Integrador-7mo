@@ -3,8 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 
-Route::middleware('auth')->group(function () {
-    //AQUI ADENTRO VAN LAS RUTAS
+Route::get('/', function () {
+    return view('metas'); // Muestra la vista de metas
 });
-
-require __DIR__.'/auth.php';
