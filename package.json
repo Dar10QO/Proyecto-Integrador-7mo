@@ -18,5 +18,8 @@
     },
     "dependencies": {
         "alertifyjs": "^1.14.0"
+    },
+    "dependencies": {
+        "bootstrap": "^5.3.3"
     }
 }
