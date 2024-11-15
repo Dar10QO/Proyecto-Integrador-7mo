@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-green-600 border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-green-500 border-b border-gray-100 bg-success">
     <!-- Primary Navigation Menu -->
     <div class="max-w-10xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -35,6 +35,10 @@
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dieta') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('membresias.index')" :active="request()->routeIs('dashboard')">
+                        {{ __('Membresias') }}
                     </x-nav-link>
 
                 </div>
