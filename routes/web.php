@@ -2,9 +2,19 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FoodController;
+use App\Models\Search;
+
+Route::get('/food/search', [FoodController::class, 'search'])->name('food.search');
+Route::get('/food/{fdcId}', [FoodController::class, 'show'])->name('food.show');
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/search/history', function () {
+    $searches = Search::all();  // Obtener todas las búsquedas almacenadas
+    return view('food.history', compact('searches'));
 });
 
 // Añadí esta ruta para que se pueda acceder a la vista de login
