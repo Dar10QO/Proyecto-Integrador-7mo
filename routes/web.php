@@ -4,13 +4,17 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoodController;
 use App\Models\Search;
+use App\Http\Controllers\EjercicioController;
 
 Route::get('/food/search', [FoodController::class, 'search'])->name('food.search');
 Route::get('/food/{fdcId}', [FoodController::class, 'show'])->name('food.show');
+Route::get('/ejercicios', [EjercicioController::class, 'index'])->name('ejercicios.index');
+Route::get('/ejercicios/{id}', [EjercicioController::class, 'show'])->name('ejercicios.show');
+
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/search/history', function () {
     $searches = Search::all();  // Obtener todas las búsquedas almacenadas
