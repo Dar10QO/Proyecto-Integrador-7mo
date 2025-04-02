@@ -9,21 +9,18 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('user_objetives', function (Blueprint $table) {
-            $table->id();
-            $table->string('objetive');
-            $table->foreignId('user_id')->constrained('users');
-            $table->timestamps();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('user_objetives');
-    }
+        public function up()
+        {
+            Schema::create('user_objetives', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('user_id')->constrained()->onDelete('cascade');
+                $table->string('objetive');
+                $table->timestamps();
+            });
+        }
+    
+        public function down()
+        {
+            Schema::dropIfExists('user_objetives');
+        }
 };
