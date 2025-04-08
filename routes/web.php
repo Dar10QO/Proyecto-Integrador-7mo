@@ -13,6 +13,7 @@ Route::get('/ejercicios', [EjercicioController::class, 'index'])->name('ejercici
 Route::get('/ejercicios/{id}', [EjercicioController::class, 'show'])->name('ejercicios.show');
 Route::get('/ejercicios-api', [EjercicioAPIController::class, 'index'])->name('ejercicios.api.index');
 Route::get('/ejercicios-api/{id}', [EjercicioAPIController::class, 'show'])->name('ejercicios.api.show');
+use App\Http\Controllers\EntrenadorController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,20 +24,20 @@ Route::get('/search/history', function () {
     return view('food.history', compact('searches'));
 });
 
-// Añadí esta ruta para que se pueda acceder a la vista de login
-Route::get('/sesion', function () {// No la nombre login porque me da error
-    return view('login');
-});
-
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+
+    Route::get('/entrenador', [EntrenadorController::class, 'index'])
+    ->name('entrenador.index')
+    ->middleware(['auth', 'verified']);
 });
 
 require __DIR__.'/auth.php';

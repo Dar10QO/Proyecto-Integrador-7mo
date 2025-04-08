@@ -18,7 +18,7 @@
                     <x-nav-link :href="route('perfil.index')" :active="request()->routeIs('dashboard')">
                         {{ __('Perfil') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('entrenador.index')" :active="request()->routeIs('entrenador.index')">
                         {{ __('Entrenador') }}
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
@@ -35,6 +35,9 @@
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dieta') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('ObjetivosU.index')" :active="request()->routeIs('ObjetivosU.index')">
+                        {{ __('Usuarios') }}
                     </x-nav-link>
 
                     <x-nav-link :href="route('membresias.index')" :active="request()->routeIs('dashboard')">
