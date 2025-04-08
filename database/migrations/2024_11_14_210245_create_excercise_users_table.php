@@ -17,8 +17,19 @@ return new class extends Migration
             $table->string('duration');
             $table->integer('reps');
             $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('exercise_id')->constrained('exercises');
+            
+            // Cambio clave aquí: usar unsignedBigInteger + nombre correcto de referencia
+            $table->unsignedBigInteger('excersice_id'); // Nota: "excersice" con una "c" para coincidir
+            
             $table->timestamps();
+        });
+
+        // Añadir la relación FK después de crear la tabla
+        Schema::table('excercise_users', function (Blueprint $table) {
+            $table->foreign('excersice_id')
+                  ->references('id')
+                  ->on('excersices') // Nombre exacto de tu tabla existente
+                  ->onDelete('cascade');
         });
     }
 
