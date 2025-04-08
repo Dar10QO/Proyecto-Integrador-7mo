@@ -66,7 +66,7 @@
           <div class="form-group">
             <label for="password">Contraseña:</label>
             <div class="input-group">
-              <input id="password" type="password" name="password" class="form-control" placeholder="Tu contraseña" title="Mínimo 6 caracteres, al menos 1 letra y 1 número" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required>
+              <input id="password" type="password" name="password" class="form-control" placeholder="Tu contraseña" required>
               <div class="input-group-append">
                 <span class="input-group-text"><i class="bi bi-lock"></i></span>
               </div>

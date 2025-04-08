@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+
+  node:
+    image: node:18
+    container_name: laravel_node
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+    command: tail -f /dev/null
+    networks:
+      - laravel
+  applaravel:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: applaravel
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+    networks:
+      - laravel
+
+  db:
+    image: mysql:8.0
+    container_name: laravel_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: user
+      MYSQL_PASSWORD: secret
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - laravel
+
+  nginx:
+    image: nginx:alpine
+    container_name: laravel_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - .:/var/www
+    depends_on:
+      - applaravel
+    networks:
+      - laravel
+
+networks:
+  laravel:
+
+volumes:
+  db_data:
