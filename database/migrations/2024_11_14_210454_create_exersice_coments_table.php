@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('exersice_coments', function (Blueprint $table) {
             $table->id();
             $table->longText('coment');
-            $table->foreignId('exersice_id')->constrained('excersices');
+            $table->foreignId('exercice_id')->constrained('exercises');
             $table->timestamps();
         });
     }
