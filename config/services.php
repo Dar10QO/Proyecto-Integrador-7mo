@@ -14,6 +14,11 @@ return [
     |
     */
 
+    'usda' => [
+        'api_key' => env('USDA_API_KEY'),
+        'base_url' => 'https://api.nal.usda.gov/fdc/v1/',
+    ],
+
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
